@@ -13,7 +13,9 @@
     <PackageProjectUrl>https://github.com/MayaWhat/UmbracoConfigurationViewer</PackageProjectUrl>
     <Copyright>Maya Watson 2023</Copyright>
     <RepositoryUrl>https://github.com/MayaWhat/UmbracoConfigurationViewer</RepositoryUrl>
-    <PackageLicenseExpression>mit</PackageLicenseExpression>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,12 +23,19 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="12.0.0" />
-    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="12.0.0" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="11.0.0" />
+    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="11.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="App_Plugins\UmbracoConfigurationViewer\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
     <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>
