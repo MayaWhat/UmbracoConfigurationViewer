@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoConfigurationViewer", "UmbracoConfigurationViewer.csproj", "{D0967841-EDC3-4139-9F22-841DD3C72B6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0967841-EDC3-4139-9F22-841DD3C72B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0967841-EDC3-4139-9F22-841DD3C72B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0967841-EDC3-4139-9F22-841DD3C72B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0967841-EDC3-4139-9F22-841DD3C72B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F108FC06-78DF-4FA8-A2E1-D33778212387}
+	EndGlobalSection
+EndGlobal

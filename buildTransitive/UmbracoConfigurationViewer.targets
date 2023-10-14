@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <UmbracoConfigurationViewerContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\UmbracoConfigurationViewer\**\*.*</UmbracoConfigurationViewerContentFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopyUmbracoConfigurationViewerAssets" BeforeTargets="BeforeBuild">
+    <ItemGroup>
+      <UmbracoConfigurationViewerContentFiles Include="$(UmbracoConfigurationViewerContentFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying UmbracoConfigurationViewer files: $(UmbracoConfigurationViewerContentFilesPath) - #@(UmbracoConfigurationViewerContentFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(UmbracoConfigurationViewerContentFiles)" DestinationFiles="@(UmbracoConfigurationViewerContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\UmbracoConfigurationViewer\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="ClearUmbracoConfigurationViewerAssets" BeforeTargets="Clean">
+    <ItemGroup>
+      <UmbracoConfigurationViewerDir Include="$(MSBuildProjectDirectory)\App_Plugins\UmbracoConfigurationViewer\" />
+    </ItemGroup>
+    <Message Text="Clear old UmbracoConfigurationViewer data" Importance="high" />
+    <RemoveDir Directories="@(UmbracoConfigurationViewerDir)" />
+  </Target>
+</Project>

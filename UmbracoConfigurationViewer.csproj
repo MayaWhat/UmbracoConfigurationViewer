@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ContentTargetFolders>.</ContentTargetFolders>
+    <Product>UmbracoConfigurationViewer</Product>
+    <PackageId>UmbracoConfigurationViewer</PackageId>
+    <Title>Umbraco Configuration Viewer</Title>
+    <Description>An extension for the Umbraco backoffice that adds a new tree to the settings section to display the resolved configuration for the runtime environment.</Description>
+    <PackageTags>umbraco plugin package</PackageTags>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>MayaWhat</Authors>
+    <PackageProjectUrl>https://github.com/MayaWhat/UmbracoConfigurationViewer</PackageProjectUrl>
+    <Copyright>Maya Watson 2023</Copyright>
+    <RepositoryUrl>https://github.com/MayaWhat/UmbracoConfigurationViewer</RepositoryUrl>
+    <PackageLicenseExpression>mit</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="12.0.0" />
+    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App_Plugins\UmbracoConfigurationViewer\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+    <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+  </ItemGroup>
+</Project>
