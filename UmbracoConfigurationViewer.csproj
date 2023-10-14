@@ -11,7 +11,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>MayaWhat</Authors>
     <PackageProjectUrl>https://github.com/MayaWhat/UmbracoConfigurationViewer</PackageProjectUrl>
-    <Copyright>Maya Watson 2023</Copyright>
+    <Copyright>Copyright © Maya Watson 2023</Copyright>
     <RepositoryUrl>https://github.com/MayaWhat/UmbracoConfigurationViewer</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
