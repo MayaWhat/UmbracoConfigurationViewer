@@ -1,0 +1,9 @@
+{
+  "id": "UmbracoConfigurationViewer",
+  "name": "UmbracoConfigurationViewer",
+  "version": "0.0.1",
+  "allowPackageTelemetry": true,
+  "javascript": [
+    "~/App_Plugins/UmbracoConfigurationViewer/backoffice/configurationViewer/overview.controller.js"
+  ]
+}

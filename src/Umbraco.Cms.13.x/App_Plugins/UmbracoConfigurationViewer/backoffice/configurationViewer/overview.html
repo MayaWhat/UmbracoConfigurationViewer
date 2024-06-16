@@ -1,0 +1,57 @@
+<div ng-controller="ConfigurationViewer.OverviewController as vm" class="clearfix">
+    <umb-editor-view footer="false">
+        <umb-editor-header name="vm.name" name-locked="true" hide-alias="true" hide-description="true" hide-icon="true" setPageTitle="true">
+        </umb-editor-header>
+
+        <umb-editor-container>
+            <umb-load-indicator ng-if="vm.loading"></umb-load-indicator>
+
+            <div ng-show="vm.error" class="alert alert-error">
+                Unable to load configuration
+            </div>
+
+            <div ng-if="!vm.loading && !vm.error">
+                <umb-editor-sub-header>
+                    <umb-editor-sub-header-content-left class="flex-auto">
+                        <input class="form-control -full-width-input" ng-model="vm.search" placeholder="Search configuration keys or values" />
+                    </umb-editor-sub-header-content-left>
+                </umb-editor-sub-header>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th ng-if="!vm.search"></th>
+                            <th>
+                                Key
+                            </th>
+                            <th>
+                                Value
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="config in vm.data"
+                            ng-if="vm.isVisible(config)"
+                            ng-include="'configTree'"
+                            ng-click="vm.toggle(config)"
+                            role="button">
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </umb-editor-container>
+    </umb-editor-view>
+</div>
+
+<script type="text/ng-template" id="configTree">
+    <td style="padding-left: {{ (config.Parents.length + 1) * 20 }}px" ng-if="!vm.search">
+        <umb-icon icon="{{vm.isOpen(config) ? 'icon-navigation-down' : 'icon-navigation-right'}}" ng-style="{'visibility': config.HasChildren ? 'visible' : 'hidden' }">
+        </umb-icon>
+    </td>
+    <td ng-style="{'padding-left': vm.search ? '' : (config.Parents.length + 1) * 20 + 'px'}">
+        {{ vm.search ? config.Path : config.Key  }}
+    </td>
+    <td>
+        {{ config.Value }}
+    </td>
+</script>
